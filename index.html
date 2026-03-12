@@ -488,7 +488,16 @@
   }
 
   function onVinylClick() {
+  const audio = document.getElementById("audio-player");
   const input = document.getElementById("file-input");
+
+  // play predefined song
+  if (audio) {
+    audio.src = "nadiya.mp3";
+    audio.play().catch(()=>{});
+  }
+
+  // keep original behaviour (open file picker if needed)
   if (input) input.click();
 }
 </script>
