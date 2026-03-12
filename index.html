@@ -310,6 +310,8 @@
   }
 </style>
 </head>
+
+
 <body>
 
 <div class="bg-photo"></div>
@@ -375,6 +377,8 @@
   // Build colorful visualizer bars
   const vizContainer = document.getElementById('visualizer');
   const vizColors = ['#ff3cac','#ff8c00','#ffe600','#00f5a0','#00d4ff','#4f46e5'];
+
+  
   for (let i = 0; i < 32; i++) {
     const b = document.createElement('div');
     b.className = 'vbar';
@@ -482,6 +486,30 @@
       setTimeout(() => btn.textContent='⎘ Copy URL', 1500);
     });
   }
+
+  function onVinylClick() {
+  const input = document.getElementById("file-input");
+  if (input) input.click();
+}
 </script>
+
+<!-- REQUIRED ELEMENTS FOR JS (added for Vercel deployment stability) -->
+
+<div id="upload-zone" style="display:none">
+  <div class="emoji-bounce">🎵</div>
+</div>
+
+<div id="player-card" class="player-card"></div>
+
+<div id="visualizer" class="visualizer"></div>
+
+<input type="range" id="progress-bar" class="progress-bar" value="0">
+
+<button id="play-btn" class="play-btn"></button>
+
+<div id="vinyl" class="vinyl"></div>
+
+<span id="current-time"></span>
+<span id="duration"></span>
 </body>
 </html>
